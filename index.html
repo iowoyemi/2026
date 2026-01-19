@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CCHM Messages Transcripts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; background:#f0f4f8; margin:0; padding:2rem; text-align:center; }
+    h1 { color:#2c3e50; margin-bottom:2rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.5rem; max-width:1100px; margin:0 auto; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,.1); padding:1.2rem; transition:transform .2s, box-shadow .2s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 6px 12px rgba(0,0,0,.15); }
+    .card a { text-decoration:none; font-size:1rem; color:#2980b9; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <h1>CCHM Messages Transcripts</h1>
+
+  <div class="grid" id="appGrid"></div>
+
+  <script>
+    const apps = [
+      { file: "1-4-26_constancy_of_god.html", title: "01-04-26 The Constancy of God" },
+      { file: "1-11-26_Lamentations_3_22-23.html", title: "01-11-26 Lamentations 3:22-23" },
+      { file: "1-18-26_Philippians_3_12-13.html", title: "01-18-26 Phillipians 3:12-13" }
+    ];
+
+    const grid = document.getElementById("appGrid");
+    apps.forEach(app => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<a href="${app.file}" target="_blank">${app.title}</a>`;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
